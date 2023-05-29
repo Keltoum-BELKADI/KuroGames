@@ -15,8 +15,18 @@
 		B9584FC02A24CF5100F079D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9584FBF2A24CF5100F079D2 /* Assets.xcassets */; };
 		B9584FC32A24CF5100F079D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9584FC12A24CF5100F079D2 /* LaunchScreen.storyboard */; };
 		B9584FCE2A24CF5100F079D2 /* KuroGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FCD2A24CF5100F079D2 /* KuroGamesTests.swift */; };
-		B9584FD82A24CF5100F079D2 /* KuroGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FD72A24CF5100F079D2 /* KuroGamesUITests.swift */; };
-		B9584FDA2A24CF5100F079D2 /* KuroGamesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FD92A24CF5100F079D2 /* KuroGamesUITestsLaunchTests.swift */; };
+		B9584FEF2A24E55100F079D2 /* KuroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FEB2A24E55100F079D2 /* KuroGame.swift */; };
+		B9584FF02A24E55100F079D2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FEC2A24E55100F079D2 /* CoreDataStack.swift */; };
+		B9584FF12A24E55100F079D2 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FED2A24E55100F079D2 /* NSManagedObject+Extension.swift */; };
+		B9584FF22A24E55100F079D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FEE2A24E55100F079D2 /* CoreDataManager.swift */; };
+		B9584FFB2A24E75700F079D2 /* ApiErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FF62A24E75700F079D2 /* ApiErrorManager.swift */; };
+		B9584FFC2A24E75700F079D2 /* GamePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FF72A24E75700F079D2 /* GamePlatform.swift */; };
+		B9584FFD2A24E75700F079D2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FF82A24E75700F079D2 /* Game.swift */; };
+		B9584FFE2A24E75700F079D2 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FF92A24E75700F079D2 /* GameService.swift */; };
+		B9584FFF2A24E75700F079D2 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FFA2A24E75700F079D2 /* Items.swift */; };
+		B95850012A24E7AD00F079D2 /* SecretApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95850002A24E7AD00F079D2 /* SecretApiKey.swift */; };
+		B958500B2A24F06F00F079D2 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95850092A24F06F00F079D2 /* Tool.swift */; };
+		B958500C2A24F06F00F079D2 /* MyLibraryElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958500A2A24F06F00F079D2 /* MyLibraryElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +59,18 @@
 		B9584FC92A24CF5100F079D2 /* KuroGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuroGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9584FCD2A24CF5100F079D2 /* KuroGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuroGamesTests.swift; sourceTree = "<group>"; };
 		B9584FD32A24CF5100F079D2 /* KuroGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuroGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9584FD72A24CF5100F079D2 /* KuroGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuroGamesUITests.swift; sourceTree = "<group>"; };
-		B9584FD92A24CF5100F079D2 /* KuroGamesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuroGamesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9584FEB2A24E55100F079D2 /* KuroGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KuroGame.swift; sourceTree = "<group>"; };
+		B9584FEC2A24E55100F079D2 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B9584FED2A24E55100F079D2 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		B9584FEE2A24E55100F079D2 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B9584FF62A24E75700F079D2 /* ApiErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorManager.swift; sourceTree = "<group>"; };
+		B9584FF72A24E75700F079D2 /* GamePlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlatform.swift; sourceTree = "<group>"; };
+		B9584FF82A24E75700F079D2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B9584FF92A24E75700F079D2 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		B9584FFA2A24E75700F079D2 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		B95850002A24E7AD00F079D2 /* SecretApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretApiKey.swift; sourceTree = "<group>"; };
+		B95850092A24F06F00F079D2 /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		B958500A2A24F06F00F079D2 /* MyLibraryElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLibraryElements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +103,6 @@
 			children = (
 				B9584FB22A24CF5000F079D2 /* KuroGames */,
 				B9584FCC2A24CF5100F079D2 /* KuroGamesTests */,
-				B9584FD62A24CF5100F079D2 /* KuroGamesUITests */,
 				B9584FB12A24CF5000F079D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,14 +120,11 @@
 		B9584FB22A24CF5000F079D2 /* KuroGames */ = {
 			isa = PBXGroup;
 			children = (
-				B9584FB32A24CF5000F079D2 /* AppDelegate.swift */,
-				B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */,
-				B9584FB72A24CF5000F079D2 /* HomeViewController.swift */,
-				B9584FB92A24CF5000F079D2 /* Main.storyboard */,
-				B9584FBF2A24CF5100F079D2 /* Assets.xcassets */,
-				B9584FC12A24CF5100F079D2 /* LaunchScreen.storyboard */,
+				B9584FE92A24E46E00F079D2 /* SupportFiles */,
+				B9584FE82A24E45F00F079D2 /* View */,
+				B9584FE72A24E45600F079D2 /* ViewModel */,
+				B9584FE62A24E44C00F079D2 /* Model */,
 				B9584FC42A24CF5100F079D2 /* Info.plist */,
-				B9584FBC2A24CF5000F079D2 /* KuroGames.xcdatamodeld */,
 			);
 			path = KuroGames;
 			sourceTree = "<group>";
@@ -121,13 +137,107 @@
 			path = KuroGamesTests;
 			sourceTree = "<group>";
 		};
-		B9584FD62A24CF5100F079D2 /* KuroGamesUITests */ = {
+		B9584FE62A24E44C00F079D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B9584FD72A24CF5100F079D2 /* KuroGamesUITests.swift */,
-				B9584FD92A24CF5100F079D2 /* KuroGamesUITestsLaunchTests.swift */,
+				B958500A2A24F06F00F079D2 /* MyLibraryElements.swift */,
+				B95850092A24F06F00F079D2 /* Tool.swift */,
+				B9584FF32A24E72800F079D2 /* NetworkService */,
+				B9584FEA2A24E51C00F079D2 /* GameCoreData */,
 			);
-			path = KuroGamesUITests;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B9584FE72A24E45600F079D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B9584FE82A24E45F00F079D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B95850072A24E88100F079D2 /* Scene */,
+				B9584FB92A24CF5000F079D2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9584FE92A24E46E00F079D2 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B9584FC12A24CF5100F079D2 /* LaunchScreen.storyboard */,
+				B9584FBF2A24CF5100F079D2 /* Assets.xcassets */,
+				B9584FB32A24CF5000F079D2 /* AppDelegate.swift */,
+				B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		B9584FEA2A24E51C00F079D2 /* GameCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B9584FEE2A24E55100F079D2 /* CoreDataManager.swift */,
+				B9584FEC2A24E55100F079D2 /* CoreDataStack.swift */,
+				B9584FEB2A24E55100F079D2 /* KuroGame.swift */,
+				B9584FED2A24E55100F079D2 /* NSManagedObject+Extension.swift */,
+				B9584FBC2A24CF5000F079D2 /* KuroGames.xcdatamodeld */,
+			);
+			path = GameCoreData;
+			sourceTree = "<group>";
+		};
+		B9584FF32A24E72800F079D2 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				B95850022A24E7CC00F079D2 /* SecretApiKey */,
+				B9584FF62A24E75700F079D2 /* ApiErrorManager.swift */,
+				B9584FF82A24E75700F079D2 /* Game.swift */,
+				B9584FF72A24E75700F079D2 /* GamePlatform.swift */,
+				B9584FF92A24E75700F079D2 /* GameService.swift */,
+				B9584FFA2A24E75700F079D2 /* Items.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		B95850022A24E7CC00F079D2 /* SecretApiKey */ = {
+			isa = PBXGroup;
+			children = (
+				B95850002A24E7AD00F079D2 /* SecretApiKey.swift */,
+			);
+			path = SecretApiKey;
+			sourceTree = "<group>";
+		};
+		B95850042A24E85F00F079D2 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				B9584FB72A24CF5000F079D2 /* HomeViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		B95850052A24E86C00F079D2 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		B95850062A24E87600F079D2 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		B95850072A24E88100F079D2 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B95850042A24E85F00F079D2 /* HomePage */,
+				B95850052A24E86C00F079D2 /* WishList */,
+				B95850062A24E87600F079D2 /* Favorite */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +371,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9584FF12A24E55100F079D2 /* NSManagedObject+Extension.swift in Sources */,
 				B9584FBE2A24CF5000F079D2 /* KuroGames.xcdatamodeld in Sources */,
 				B9584FB82A24CF5000F079D2 /* HomeViewController.swift in Sources */,
+				B958500B2A24F06F00F079D2 /* Tool.swift in Sources */,
+				B9584FFE2A24E75700F079D2 /* GameService.swift in Sources */,
 				B9584FB42A24CF5000F079D2 /* AppDelegate.swift in Sources */,
+				B9584FF02A24E55100F079D2 /* CoreDataStack.swift in Sources */,
+				B9584FFF2A24E75700F079D2 /* Items.swift in Sources */,
 				B9584FB62A24CF5000F079D2 /* SceneDelegate.swift in Sources */,
+				B9584FFD2A24E75700F079D2 /* Game.swift in Sources */,
+				B958500C2A24F06F00F079D2 /* MyLibraryElements.swift in Sources */,
+				B9584FFC2A24E75700F079D2 /* GamePlatform.swift in Sources */,
+				B9584FFB2A24E75700F079D2 /* ApiErrorManager.swift in Sources */,
+				B9584FF22A24E55100F079D2 /* CoreDataManager.swift in Sources */,
+				B95850012A24E7AD00F079D2 /* SecretApiKey.swift in Sources */,
+				B9584FEF2A24E55100F079D2 /* KuroGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9584FD82A24CF5100F079D2 /* KuroGamesUITests.swift in Sources */,
-				B9584FDA2A24CF5100F079D2 /* KuroGamesUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

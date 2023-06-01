@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93465CA2A28E1FA00476291 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93465C92A28E1FA00476291 /* ScanViewController.swift */; };
+		B93465CE2A28E2CF00476291 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93465CD2A28E2CF00476291 /* SplashScreenViewController.swift */; };
 		B9584FB42A24CF5000F079D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB32A24CF5000F079D2 /* AppDelegate.swift */; };
 		B9584FB62A24CF5000F079D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */; };
 		B9584FB82A24CF5000F079D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB72A24CF5000F079D2 /* HomeViewController.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B93465C92A28E1FA00476291 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		B93465CD2A28E2CF00476291 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		B9584FB02A24CF5000F079D2 /* KuroGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuroGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9584FB32A24CF5000F079D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B93465CB2A28E1FE00476291 /* ScanView */ = {
+			isa = PBXGroup;
+			children = (
+				B93465C92A28E1FA00476291 /* ScanViewController.swift */,
+			);
+			path = ScanView;
+			sourceTree = "<group>";
+		};
+		B93465CC2A28E28000476291 /* SplashScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				B93465CD2A28E2CF00476291 /* SplashScreenViewController.swift */,
+			);
+			path = SplashScreenView;
+			sourceTree = "<group>";
+		};
 		B9584FA72A24CF5000F079D2 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B9584FB72A24CF5000F079D2 /* HomeViewController.swift */,
+				B93465CB2A28E1FE00476291 /* ScanView */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -233,6 +254,7 @@
 		B95850072A24E88100F079D2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				B93465CC2A28E28000476291 /* SplashScreenView */,
 				B95850042A24E85F00F079D2 /* HomePage */,
 				B95850052A24E86C00F079D2 /* WishList */,
 				B95850062A24E87600F079D2 /* Favorite */,
@@ -373,11 +395,13 @@
 			files = (
 				B9584FF12A24E55100F079D2 /* NSManagedObject+Extension.swift in Sources */,
 				B9584FBE2A24CF5000F079D2 /* KuroGames.xcdatamodeld in Sources */,
+				B93465CE2A28E2CF00476291 /* SplashScreenViewController.swift in Sources */,
 				B9584FB82A24CF5000F079D2 /* HomeViewController.swift in Sources */,
 				B958500B2A24F06F00F079D2 /* Tool.swift in Sources */,
 				B9584FFE2A24E75700F079D2 /* GameService.swift in Sources */,
 				B9584FB42A24CF5000F079D2 /* AppDelegate.swift in Sources */,
 				B9584FF02A24E55100F079D2 /* CoreDataStack.swift in Sources */,
+				B93465CA2A28E1FA00476291 /* ScanViewController.swift in Sources */,
 				B9584FFF2A24E75700F079D2 /* Items.swift in Sources */,
 				B9584FB62A24CF5000F079D2 /* SceneDelegate.swift in Sources */,
 				B9584FFD2A24E75700F079D2 /* Game.swift in Sources */,

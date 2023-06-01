@@ -7,4 +7,5 @@
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="release_date" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="WishlistGame" representedClassName="WishlistGame" syncable="YES" codeGenerationType="class"/>
 </model>

@@ -1,13 +1,13 @@
 //
-//  SplashScreenViewController.swift
+//  GameCardViewController.swift
 //  KuroGames
 //
-//  Created by Kel_Jellysh on 01/06/2023.
+//  Created by Kel_Jellysh on 08/06/2023.
 //
 
 import UIKit
 
-class SplashScreenViewController: UIViewController {
+class GameCardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

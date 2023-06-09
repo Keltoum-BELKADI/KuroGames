@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B93465CA2A28E1FA00476291 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93465C92A28E1FA00476291 /* ScanViewController.swift */; };
-		B93465CE2A28E2CF00476291 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93465CD2A28E2CF00476291 /* SplashScreenViewController.swift */; };
 		B9584FB42A24CF5000F079D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB32A24CF5000F079D2 /* AppDelegate.swift */; };
 		B9584FB62A24CF5000F079D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */; };
 		B9584FB82A24CF5000F079D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB72A24CF5000F079D2 /* HomeViewController.swift */; };
@@ -29,6 +28,11 @@
 		B95850012A24E7AD00F079D2 /* SecretApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95850002A24E7AD00F079D2 /* SecretApiKey.swift */; };
 		B958500B2A24F06F00F079D2 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95850092A24F06F00F079D2 /* Tool.swift */; };
 		B958500C2A24F06F00F079D2 /* MyLibraryElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958500A2A24F06F00F079D2 /* MyLibraryElements.swift */; };
+		B99665C32A32157B00EAB091 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99665C22A32157B00EAB091 /* SearchViewController.swift */; };
+		B99665C52A32158900EAB091 /* WishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99665C42A32158900EAB091 /* WishViewController.swift */; };
+		B99665C72A32159500EAB091 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99665C62A32159500EAB091 /* FavoriteViewController.swift */; };
+		B99665CA2A32166400EAB091 /* GameCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99665C92A32166400EAB091 /* GameCardViewController.swift */; };
+		B99665CC2A321D0000EAB091 /* WishlistGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99665CB2A321D0000EAB091 /* WishlistGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		B93465C92A28E1FA00476291 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		B93465CD2A28E2CF00476291 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		B9584FB02A24CF5000F079D2 /* KuroGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuroGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9584FB32A24CF5000F079D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +78,11 @@
 		B95850002A24E7AD00F079D2 /* SecretApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretApiKey.swift; sourceTree = "<group>"; };
 		B95850092A24F06F00F079D2 /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		B958500A2A24F06F00F079D2 /* MyLibraryElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLibraryElements.swift; sourceTree = "<group>"; };
+		B99665C22A32157B00EAB091 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B99665C42A32158900EAB091 /* WishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishViewController.swift; sourceTree = "<group>"; };
+		B99665C62A32159500EAB091 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		B99665C92A32166400EAB091 /* GameCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardViewController.swift; sourceTree = "<group>"; };
+		B99665CB2A321D0000EAB091 /* WishlistGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,14 +116,6 @@
 				B93465C92A28E1FA00476291 /* ScanViewController.swift */,
 			);
 			path = ScanView;
-			sourceTree = "<group>";
-		};
-		B93465CC2A28E28000476291 /* SplashScreenView */ = {
-			isa = PBXGroup;
-			children = (
-				B93465CD2A28E2CF00476291 /* SplashScreenViewController.swift */,
-			);
-			path = SplashScreenView;
 			sourceTree = "<group>";
 		};
 		B9584FA72A24CF5000F079D2 = {
@@ -201,6 +201,7 @@
 				B9584FEE2A24E55100F079D2 /* CoreDataManager.swift */,
 				B9584FEC2A24E55100F079D2 /* CoreDataStack.swift */,
 				B9584FEB2A24E55100F079D2 /* KuroGame.swift */,
+				B99665CB2A321D0000EAB091 /* WishlistGame.swift */,
 				B9584FED2A24E55100F079D2 /* NSManagedObject+Extension.swift */,
 				B9584FBC2A24CF5000F079D2 /* KuroGames.xcdatamodeld */,
 			);
@@ -232,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				B9584FB72A24CF5000F079D2 /* HomeViewController.swift */,
-				B93465CB2A28E1FE00476291 /* ScanView */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -240,6 +240,7 @@
 		B95850052A24E86C00F079D2 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
+				B99665C42A32158900EAB091 /* WishViewController.swift */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -247,6 +248,7 @@
 		B95850062A24E87600F079D2 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				B99665C62A32159500EAB091 /* FavoriteViewController.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -254,12 +256,30 @@
 		B95850072A24E88100F079D2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				B93465CC2A28E28000476291 /* SplashScreenView */,
+				B99665C82A32164300EAB091 /* GameCard */,
 				B95850042A24E85F00F079D2 /* HomePage */,
+				B99665C12A32155800EAB091 /* SearchPage */,
+				B93465CB2A28E1FE00476291 /* ScanView */,
 				B95850052A24E86C00F079D2 /* WishList */,
 				B95850062A24E87600F079D2 /* Favorite */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		B99665C12A32155800EAB091 /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				B99665C22A32157B00EAB091 /* SearchViewController.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		B99665C82A32164300EAB091 /* GameCard */ = {
+			isa = PBXGroup;
+			children = (
+				B99665C92A32166400EAB091 /* GameCardViewController.swift */,
+			);
+			path = GameCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,20 +415,24 @@
 			files = (
 				B9584FF12A24E55100F079D2 /* NSManagedObject+Extension.swift in Sources */,
 				B9584FBE2A24CF5000F079D2 /* KuroGames.xcdatamodeld in Sources */,
-				B93465CE2A28E2CF00476291 /* SplashScreenViewController.swift in Sources */,
 				B9584FB82A24CF5000F079D2 /* HomeViewController.swift in Sources */,
 				B958500B2A24F06F00F079D2 /* Tool.swift in Sources */,
 				B9584FFE2A24E75700F079D2 /* GameService.swift in Sources */,
 				B9584FB42A24CF5000F079D2 /* AppDelegate.swift in Sources */,
+				B99665C52A32158900EAB091 /* WishViewController.swift in Sources */,
 				B9584FF02A24E55100F079D2 /* CoreDataStack.swift in Sources */,
 				B93465CA2A28E1FA00476291 /* ScanViewController.swift in Sources */,
 				B9584FFF2A24E75700F079D2 /* Items.swift in Sources */,
 				B9584FB62A24CF5000F079D2 /* SceneDelegate.swift in Sources */,
 				B9584FFD2A24E75700F079D2 /* Game.swift in Sources */,
 				B958500C2A24F06F00F079D2 /* MyLibraryElements.swift in Sources */,
+				B99665C32A32157B00EAB091 /* SearchViewController.swift in Sources */,
+				B99665C72A32159500EAB091 /* FavoriteViewController.swift in Sources */,
 				B9584FFC2A24E75700F079D2 /* GamePlatform.swift in Sources */,
 				B9584FFB2A24E75700F079D2 /* ApiErrorManager.swift in Sources */,
 				B9584FF22A24E55100F079D2 /* CoreDataManager.swift in Sources */,
+				B99665CC2A321D0000EAB091 /* WishlistGame.swift in Sources */,
+				B99665CA2A32166400EAB091 /* GameCardViewController.swift in Sources */,
 				B95850012A24E7AD00F079D2 /* SecretApiKey.swift in Sources */,
 				B9584FEF2A24E55100F079D2 /* KuroGame.swift in Sources */,
 			);

@@ -9,8 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet private var homeBTN: UIButton?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let button = homeBTN else { return }
+        button.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
 

@@ -144,6 +144,15 @@
 			path = GameViewCell;
 			sourceTree = "<group>";
 		};
+		B943E0392A4479F10075ED8A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B943E0342A4451AC0075ED8A /* GameViewCell */,
+				B943E02F2A4447E70075ED8A /* ScreenshotCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B9584FA72A24CF5000F079D2 = {
 			isa = PBXGroup;
 			children = (
@@ -282,7 +291,7 @@
 		B95850072A24E88100F079D2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				B943E0342A4451AC0075ED8A /* GameViewCell */,
+				B943E0392A4479F10075ED8A /* Cells */,
 				B99665C82A32164300EAB091 /* GameCard */,
 				B95850042A24E85F00F079D2 /* HomePage */,
 				B99665C12A32155800EAB091 /* SearchPage */,
@@ -305,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				B99665C92A32166400EAB091 /* GameCardViewController.swift */,
-				B943E02F2A4447E70075ED8A /* ScreenshotCell */,
 			);
 			path = GameCard;
 			sourceTree = "<group>";

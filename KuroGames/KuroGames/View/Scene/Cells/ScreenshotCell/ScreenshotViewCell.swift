@@ -9,9 +9,16 @@ import UIKit
 
 class ScreenshotViewCell: UICollectionViewCell {
 
+    @IBOutlet private var screenshotImage: UIImageView?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       setupUI()
+    }
+
+    func setupUI() {
+        guard let image = screenshotImage else { return }
+        image.layer.cornerRadius = 10
     }
 
 }

@@ -16,13 +16,13 @@ class SearchViewController: UIViewController {
     @IBOutlet private var newEnterGame: UIButton?
     @IBOutlet private var resultCollectionVIew: UICollectionView?
 
-    var layout : UICollectionViewFlowLayout = {
+    private var layout : UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: 270, height: 170)
         layout.scrollDirection = .vertical
         layout.sectionInset = .zero
         return layout
     }()
+    let nibRegistrationID = "GameCollectionViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,8 @@ class SearchViewController: UIViewController {
     }
 
     func setupUI() {
-
+        let nibCell = UINib(nibName: nibRegistrationID, bundle: nil)
+        resultCollectionVIew?.register(nibCell, forCellWithReuseIdentifier: nibRegistrationID)
         guard let result = resultCollectionVIew else { return }
         guard let homeImage = searchHomeImage else { return }
         guard let container = searchContainer else { return }
@@ -54,8 +55,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "game", for: indexPath) as! GameCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCell", for: indexPath) as! GameCollectionViewCell
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "GameCard", sender: nil)
     }
 }
 
@@ -63,6 +68,6 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 25
             let collectionViewSize = collectionView.frame.size.width - padding
-            return CGSize(width: collectionViewSize/3, height: 115)
+            return CGSize(width: collectionViewSize/2, height: 150)
     }
 }

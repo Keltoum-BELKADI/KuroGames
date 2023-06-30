@@ -23,7 +23,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multiplayer" translatesAutoresizingMaskIntoConstraints="NO" id="Tzk-OU-h7l">
-                        <rect key="frame" x="-5" y="5" width="160" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-Vc-mfs">
                         <rect key="frame" x="0.0" y="112" width="150" height="38"/>
@@ -47,17 +47,17 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Tzk-OU-h7l" secondAttribute="bottom" constant="5" id="2EK-yo-fSb"/>
+                <constraint firstAttribute="bottom" secondItem="Tzk-OU-h7l" secondAttribute="bottom" id="2EK-yo-fSb"/>
                 <constraint firstItem="gvo-Vc-mfs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="112" id="4OE-cJ-Bge"/>
                 <constraint firstItem="yk6-70-3kX" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="6Qf-QY-Gh8"/>
                 <constraint firstAttribute="trailing" secondItem="gvo-Vc-mfs" secondAttribute="trailing" id="KI2-4M-T9a"/>
-                <constraint firstItem="Tzk-OU-h7l" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" constant="5" id="M33-WP-eTl"/>
-                <constraint firstItem="Tzk-OU-h7l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="MCh-bl-c1K"/>
+                <constraint firstItem="Tzk-OU-h7l" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="M33-WP-eTl"/>
+                <constraint firstItem="Tzk-OU-h7l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MCh-bl-c1K"/>
                 <constraint firstItem="yk6-70-3kX" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="OqS-WP-HmE"/>
                 <constraint firstAttribute="bottom" secondItem="gvo-Vc-mfs" secondAttribute="bottom" id="Pa6-3K-m0M"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="yk6-70-3kX" secondAttribute="top" constant="59" id="WcB-FB-tzy"/>
                 <constraint firstItem="yk6-70-3kX" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="ieh-Pa-wHZ"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="Tzk-OU-h7l" secondAttribute="leading" constant="5" id="mQB-6t-CnG"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="Tzk-OU-h7l" secondAttribute="leading" id="mQB-6t-CnG"/>
                 <constraint firstItem="gvo-Vc-mfs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ovE-qt-ZUu"/>
             </constraints>
             <size key="customSize" width="150" height="150"/>

@@ -9,17 +9,26 @@ import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet private var backgroundImage: UIImageView?
-    @IBOutlet private var gameLabel: UILabel?
+    @IBOutlet weak var backgroundImage: UIImageView?
+    @IBOutlet weak var gameLabel: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func setupUI() {
+    func setupUI(game: Game) {
         guard let image = backgroundImage else { return }
-        image.layer.cornerRadius = 5
+        guard let gameLabel = gameLabel else { return }
+        guard let backImage = game.backgroundImage else { return }
+        gameLabel.text = game.name
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 3
+        self.layer.borderColor = UIColor.darkGray.cgColor
+        image.cacheImage(urlString: backImage)
+        image.contentMode = .scaleToFill
+
     }
 
 }

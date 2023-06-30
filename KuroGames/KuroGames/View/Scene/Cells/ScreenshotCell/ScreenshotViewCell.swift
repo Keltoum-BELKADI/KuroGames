@@ -11,7 +11,7 @@ class ScreenshotViewCell: UICollectionViewCell {
 
     @IBOutlet private var screenshotImage: UIImageView?
 
-    override func awakeFromNib() {
+    override func awakeFromNib(){
         super.awakeFromNib()
        setupUI()
     }
@@ -19,6 +19,12 @@ class ScreenshotViewCell: UICollectionViewCell {
     func setupUI() {
         guard let image = screenshotImage else { return }
         image.layer.cornerRadius = 10
+    }
+
+    func setup(screenshot: ShortScreenshot){
+        guard let image = screenshotImage else { return }
+        guard let imageUrl = screenshot.image else { return }
+        image.downloaded(from: imageUrl)
     }
 
 }

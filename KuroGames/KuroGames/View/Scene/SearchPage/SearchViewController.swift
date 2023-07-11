@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+//MARK: IBoutlets
     @IBOutlet private var searchHomeImage: UIImageView?
     @IBOutlet private var searchContainer: UIView?
     @IBOutlet private var searchField: UITextField?
@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
             }
         }
     }
-    let searchViewModel = SearchViewModel(gameService: GameService(session: URLSession(configuration: .default)))
+    private let searchViewModel = SearchViewModel(gameService: GameService(session: URLSession(configuration: .default)))
 
     @IBAction func searchGame(_ sender: Any) {
         guard let textField = searchField else { return }
@@ -54,10 +54,12 @@ class SearchViewController: UIViewController {
         guard let textField = searchField else { return }
         result.dataSource = self
         result.delegate = self
+        textField.delegate = self
         result.collectionViewLayout = layout
         homeImage.layer.cornerRadius = 10
         container.layer.cornerRadius = 10
         textField.textColor = .white
+        textField.returnKeyType = .done
 
         DispatchQueue.main.async {
             self.searchViewModel.listOfGames = { [weak self] games in
@@ -77,7 +79,7 @@ class SearchViewController: UIViewController {
             Logger.log(.info, "Pas trouvé")
             return
         }
-        searchViewModel.searchGames(title: title, mutating: searchGames, nextPage: nextPage, controller: self)
+        searchViewModel.searchGames(title: title, searchResult: searchGames, nextPage: nextPage, controller: self)
     }
 }
 
@@ -97,7 +99,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GameCard", sender: searchGames[indexPath.row])
+        guard let gameCardController = storyboard?.instantiateViewController(identifier: "GameCardViewController") as? GameCardViewController else { return }
+        gameCardController.game = searchGames[indexPath.row]
+        navigationController?.pushViewController(gameCardController, animated: true)
     }
 }
 
@@ -118,4 +122,17 @@ extension SearchViewController: UITextFieldDelegate {
         fetchDataGames()
         return true
     }
+
+       func textFieldDidBeginEditing(_ textField: UITextField) {
+           guard let textField = searchField else { return }
+           textField.layer.borderWidth = 2
+           textField.layer.borderColor = UIColor.lightGray.cgColor
+       }
+
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            guard let textField = searchField else { return }
+           textField.layer.borderWidth = 0
+           textField.layer.borderColor = UIColor.clear.cgColor
+
+       }
 }

@@ -15,6 +15,7 @@ class GameCardViewController: UIViewController {
     @IBOutlet private var addFavoriteBTN: UIButton?
     @IBOutlet private var addWishListBTN: UIButton?
     @IBOutlet private var screenshortCollectionView: UICollectionView?
+    @IBOutlet private var blurBackGround: UIImageView?
     @IBOutlet private var infoContainer: UIView?
 
     private var layout : UICollectionViewFlowLayout = {
@@ -25,29 +26,48 @@ class GameCardViewController: UIViewController {
         return layout
     }()
     let nibRegistrationID = "ScreenshotViewCell"
+    var game: Game?
+    var screenshots = [String]()
+    var gameCardViewModel = GameCardViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        // Do any additional setup after loading the view.
     }
     
     func setupUI() {
-        guard let screenshots = screenshortCollectionView else { return }
+        guard let screenshotsCollectionView = screenshortCollectionView else { return }
         guard let container = infoContainer else { return }
-        guard let gamerCover = gameImage else { return }
+        guard let gameCover = gameImage else { return }
+        guard let blurCover = blurBackGround else { return }
+        guard let gameTitle = nameLabel else { return }
+        guard let gameEditor = editorLabel else { return }
         guard let wishBTN = addWishListBTN else { return }
         guard let favBTN = addFavoriteBTN else { return }
+        guard let gameInfo = game else { return }
+        guard let gameCoverUrl = gameInfo.backgroundImage else { return }
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.backgroundColor = .clear
         let nibCell = UINib(nibName: nibRegistrationID, bundle: nil)
-        screenshots.register(nibCell, forCellWithReuseIdentifier: nibRegistrationID)
-        screenshots.dataSource = self
-        screenshots.delegate = self
-        screenshots.collectionViewLayout = layout
+        screenshotsCollectionView.register(nibCell, forCellWithReuseIdentifier: nibRegistrationID)
+        screenshotsCollectionView.dataSource = self
+        screenshotsCollectionView.delegate = self
+        screenshotsCollectionView.collectionViewLayout = layout
         container.layer.cornerRadius = 10
 
-        for element in [gamerCover, favBTN, wishBTN] {
+        //setup Navigation Bar
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+
+        //Assign game's values
+        gameTitle.text = gameInfo.name
+        gameEditor.text = gameInfo.released
+        gameCover.downloaded(from: gameCoverUrl)
+        blurCover.downloaded(from: gameCoverUrl)
+        screenshots = gameCardViewModel.listOfScreenshots(game: gameInfo, images: self.screenshots)
+
+        for element in [gameCover, favBTN, wishBTN] {
             element.layer.cornerRadius = 5
         }
     }
@@ -59,19 +79,14 @@ extension GameCardViewController: UICollectionViewDelegate, UICollectionViewData
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        guard let screenshots = game?.short_screenshots else { return 0 }
+        return screenshots.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotViewCell", for: indexPath) as! ScreenshotViewCell
+        guard let screenshots = game?.short_screenshots else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotViewCell", for: indexPath) as? ScreenshotViewCell else { return UICollectionViewCell() }
+        cell.setup(screenshot: screenshots[indexPath.row])
         return cell
     }
 }
-
-//extension GameCardViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let padding: CGFloat = 25
-//            let collectionViewSize = collectionView.frame.size.width - padding
-//            return CGSize(width: collectionViewSize/2, height: 150)
-//    }
-//}

@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="205" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clive" translatesAutoresizingMaskIntoConstraints="NO" id="RSC-pc-NEL">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multiplayer" translatesAutoresizingMaskIntoConstraints="NO" id="RSC-pc-NEL">
                         <rect key="frame" x="0.0" y="0.0" width="205" height="180"/>
                     </imageView>
                 </subviews>
@@ -37,6 +37,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Clive" width="1320" height="743"/>
+        <image name="multiplayer" width="256" height="256"/>
     </resources>
 </document>

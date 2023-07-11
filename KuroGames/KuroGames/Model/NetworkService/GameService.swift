@@ -80,7 +80,7 @@ class GameService: NetworkService {
                 guard error == nil else { completion(.failure(.server))
                     return
                 }
-               
+                
                 guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     completion(.failure(.network))
                     return

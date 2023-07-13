@@ -71,8 +71,9 @@ class GameService: NetworkService {
         urlComponents.path = "/api/games"
         urlComponents.queryItems = [
             URLQueryItem(name: "key", value: SecretApiKey.rawgApiKey),
-            URLQueryItem(name: "search", value: search)]
-        
+            URLQueryItem(name: "search", value: search),
+            URLQueryItem(name: "page_size", value: "40")]
+
         guard let urlRawg = urlComponents.url?.absoluteString else { return }
         guard let url = URL(string: urlRawg) else { return }
         dataTask = session.dataTask(with: url) { (data, response, error) in

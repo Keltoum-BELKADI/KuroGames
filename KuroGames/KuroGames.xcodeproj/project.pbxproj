@@ -15,7 +15,7 @@
 		B943E0382A4451DE0075ED8A /* GameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B943E0362A4451DE0075ED8A /* GameCollectionViewCell.xib */; };
 		B94D323A2A4B1A8400697B88 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D32392A4B1A8400697B88 /* UIImageView+Extension.swift */; };
 		B94D323D2A4B1B8E00697B88 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D323C2A4B1B8E00697B88 /* UIView+Extension.swift */; };
-		B94D323F2A4B1DC800697B88 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D323E2A4B1DC800697B88 /* UIViewController+Extension.swift */; };
+		B94D323F2A4B1DC800697B88 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D323E2A4B1DC800697B88 /* AlertManager.swift */; };
 		B94D32412A4B26BD00697B88 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D32402A4B26BD00697B88 /* SearchViewModel.swift */; };
 		B9584FB42A24CF5000F079D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB32A24CF5000F079D2 /* AppDelegate.swift */; };
 		B9584FB62A24CF5000F079D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9584FB52A24CF5000F079D2 /* SceneDelegate.swift */; };
@@ -71,7 +71,7 @@
 		B943E0362A4451DE0075ED8A /* GameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionViewCell.xib; sourceTree = "<group>"; };
 		B94D32392A4B1A8400697B88 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B94D323C2A4B1B8E00697B88 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		B94D323E2A4B1DC800697B88 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B94D323E2A4B1DC800697B88 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		B94D32402A4B26BD00697B88 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B9584FB02A24CF5000F079D2 /* KuroGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuroGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9584FB32A24CF5000F079D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				B94D323C2A4B1B8E00697B88 /* UIView+Extension.swift */,
-				B94D323E2A4B1DC800697B88 /* UIViewController+Extension.swift */,
+				B94D323E2A4B1DC800697B88 /* AlertManager.swift */,
 				B94D32392A4B1A8400697B88 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
@@ -477,7 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94D323F2A4B1DC800697B88 /* UIViewController+Extension.swift in Sources */,
+				B94D323F2A4B1DC800697B88 /* AlertManager.swift in Sources */,
 				B9584FF12A24E55100F079D2 /* NSManagedObject+Extension.swift in Sources */,
 				B943E0322A4448060075ED8A /* ScreenshotViewCell.swift in Sources */,
 				B9584FBE2A24CF5000F079D2 /* KuroGames.xcdatamodeld in Sources */,

@@ -26,6 +26,10 @@ class SearchViewController: UIViewController {
     private let nibRegistrationID = "GameCollectionViewCell"
     private var gameTitle = ""
     private var nextPage: String = ""
+    private var errorText: String = ""
+    private var alert: AlertManager?
+
+
     var searchGames: [Game] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -43,6 +47,14 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        alert = AlertManager(viewModel: searchViewModel)
+    }
+
+    //send data to the next Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GameCard", let next = segue.destination as? GameCardViewController {
+            next.game = sender as? Game
+        }
     }
 
     func setupUI() {
@@ -60,26 +72,32 @@ class SearchViewController: UIViewController {
         container.layer.cornerRadius = 10
         textField.textColor = .white
         textField.returnKeyType = .done
+        textField.placeholder = "Précisez le jeu"
 
-        DispatchQueue.main.async {
             self.searchViewModel.listOfGames = { [weak self] games in
                 self?.searchGames = games
+                Logger.log(.info, "Apicall succeed")
             }
 
             self.searchViewModel.page = { [weak self] page in
                 self?.nextPage = page 
             }
-        }
     }
     
     private func fetchDataGames () {
         guard let textField = searchField else { return }
         guard resultCollectionVIew != nil else { return }
+
         guard let title = textField.text, !title.isEmpty, title.count > 3 else {
-            Logger.log(.info, "Pas trouvé")
+            Logger.log(.warning, "Pas trouvé")
+            alert?.showAlertMessage(title: "Accident", message: "Nous ne trouvons pas le titre ou bien votre champs est vide.")
+            textField.layer.borderColor = UIColor.red.cgColor
+            textField.layer.borderWidth = 3
             return
         }
-        searchViewModel.searchGames(title: title, searchResult: searchGames, nextPage: nextPage, controller: self)
+
+        searchViewModel.searchGames(title: title, searchResult: searchGames, nextPage: nextPage, controller: self, error: errorText)
+        print(errorText)
     }
 }
 
@@ -99,9 +117,18 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let gameCardController = storyboard?.instantiateViewController(identifier: "GameCardViewController") as? GameCardViewController else { return }
-        gameCardController.game = searchGames[indexPath.row]
-        navigationController?.pushViewController(gameCardController, animated: true)
+        performSegue(withIdentifier: "GameCard", sender: searchGames[indexPath.row])
+    }
+
+    //Go to the collectionView's end and load next page
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollViewHeight = scrollView.frame.size.height;
+        let scrollContentSizeHeight = scrollView.contentSize.height;
+        let scrollOffset = scrollView.contentOffset.y;
+        if (scrollOffset + scrollViewHeight == scrollContentSizeHeight) {
+            print("je scroll")
+            searchViewModel.loadMoreData(page: nextPage, searchGames: searchGames)
+        }
     }
 }
 
@@ -125,7 +152,7 @@ extension SearchViewController: UITextFieldDelegate {
 
        func textFieldDidBeginEditing(_ textField: UITextField) {
            guard let textField = searchField else { return }
-           textField.layer.borderWidth = 2
+           textField.layer.borderWidth = 3
            textField.layer.borderColor = UIColor.lightGray.cgColor
        }
 

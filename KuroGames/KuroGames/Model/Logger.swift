@@ -19,7 +19,5 @@ class Logger {
     static func log(_ level: LogLevel, _ message: String) {
         let logText = "\(level.rawValue) [\(Date())] - \(message)"
         print(logText)
-        let alert = UIAlertController(title: "Oupss", message: "\(message)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
 }

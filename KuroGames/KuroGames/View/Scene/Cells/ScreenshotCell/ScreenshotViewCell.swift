@@ -25,6 +25,7 @@ class ScreenshotViewCell: UICollectionViewCell {
         guard let image = screenshotImage else { return }
         guard let imageUrl = screenshot.image else { return }
         image.downloaded(from: imageUrl)
+        self.frame.size = CGSize(width: 270, height: 250)
     }
 
 }

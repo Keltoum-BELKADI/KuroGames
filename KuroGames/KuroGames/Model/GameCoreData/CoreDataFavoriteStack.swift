@@ -8,13 +8,13 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+class CoreDataFavoriteStack {
     
     //MARK: property
     var persistentContainer: NSPersistentContainer
     
     //MARK: Singleton property
-    static let shared = CoreDataStack(modelName: "KuroGames")
+    static let favoriteShared = CoreDataFavoriteStack(modelName: "KuroGames")
     
     //MARK: Iniialization 
     init(modelName: String) {
@@ -33,7 +33,7 @@ class CoreDataStack {
         do {
             try mainContext.save()
         } catch {
-            print(error.localizedDescription)
+            Logger.log(.error, "Value not saved")
         }
     }
 }

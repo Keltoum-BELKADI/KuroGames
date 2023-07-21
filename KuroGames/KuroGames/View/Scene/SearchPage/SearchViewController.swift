@@ -8,12 +8,11 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-//MARK: IBoutlets
+    //MARK: IBoutlets
     @IBOutlet private var searchHomeImage: UIImageView?
     @IBOutlet private var searchContainer: UIView?
     @IBOutlet private var searchField: UITextField?
     @IBOutlet private var searchButton: UIButton?
-    @IBOutlet private var newEnterGame: UIButton?
     @IBOutlet private var resultCollectionVIew: UICollectionView?
 
     //MARK: Properties
@@ -27,7 +26,6 @@ class SearchViewController: UIViewController {
     private var gameTitle = ""
     private var nextPage: String = ""
     private var errorText: String = ""
-    private var alert: AlertManager?
 
 
     var searchGames: [Game] = [] {
@@ -37,6 +35,7 @@ class SearchViewController: UIViewController {
             }
         }
     }
+    var nextGames = [Game]()
     private let searchViewModel = SearchViewModel(gameService: GameService(session: URLSession(configuration: .default)))
 
     @IBAction func searchGame(_ sender: Any) {
@@ -47,7 +46,6 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        alert = AlertManager(viewModel: searchViewModel)
     }
 
     //send data to the next Controller
@@ -67,6 +65,7 @@ class SearchViewController: UIViewController {
         result.dataSource = self
         result.delegate = self
         textField.delegate = self
+        searchViewModel.delegate = self
         result.collectionViewLayout = layout
         homeImage.layer.cornerRadius = 10
         container.layer.cornerRadius = 10
@@ -74,30 +73,27 @@ class SearchViewController: UIViewController {
         textField.returnKeyType = .done
         textField.placeholder = "Précisez le jeu"
 
-            self.searchViewModel.listOfGames = { [weak self] games in
-                self?.searchGames = games
-                Logger.log(.info, "Apicall succeed")
-            }
+        self.searchViewModel.listOfGames = { [weak self] games in
+            self?.searchGames = games
+            Logger.log(.info, "Apicall succeed")
+        }
 
-            self.searchViewModel.page = { [weak self] page in
-                self?.nextPage = page 
-            }
+        self.searchViewModel.page = { [weak self] page in
+            self?.nextPage = page
+        }
+
+        self.searchViewModel.errorHappen = { [weak self] error in
+            self?.errorText = error
+        }
     }
     
     private func fetchDataGames () {
         guard let textField = searchField else { return }
         guard resultCollectionVIew != nil else { return }
 
-        guard let title = textField.text, !title.isEmpty, title.count > 3 else {
-            Logger.log(.warning, "Pas trouvé")
-            alert?.showAlertMessage(title: "Accident", message: "Nous ne trouvons pas le titre ou bien votre champs est vide.")
-            textField.layer.borderColor = UIColor.red.cgColor
-            textField.layer.borderWidth = 3
-            return
-        }
+        guard let title = textField.text else { return }
 
         searchViewModel.searchGames(title: title, searchResult: searchGames, nextPage: nextPage, controller: self, error: errorText)
-        print(errorText)
     }
 }
 
@@ -120,23 +116,27 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         performSegue(withIdentifier: "GameCard", sender: searchGames[indexPath.row])
     }
 
-    //Go to the collectionView's end and load next page
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollViewHeight = scrollView.frame.size.height;
-        let scrollContentSizeHeight = scrollView.contentSize.height;
-        let scrollOffset = scrollView.contentOffset.y;
-        if (scrollOffset + scrollViewHeight == scrollContentSizeHeight) {
-            print("je scroll")
-            searchViewModel.loadMoreData(page: nextPage, searchGames: searchGames)
+    //Charger la prochaine page de résultats lorsque l'utilisateur atteint la fin
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+            // Vérifiez si la dernière cellule est affichée
+            if indexPath.row == searchGames.count - 1 {
+                    searchViewModel.loadMoreData(page: nextPage, searchGames: searchGames)
+                self.searchViewModel.nextGames = { [weak self] games in
+                    guard let self = self else { return }
+                    self.nextGames = games
+                    self.searchGames.append(contentsOf: nextGames)
+                    self.resultCollectionVIew?.reloadData()
+                    Logger.log(.info, "LoadMore succeed")
+                }
+            }
         }
-    }
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 25
-            let collectionViewSize = collectionView.frame.size.width - padding
-            return CGSize(width: collectionViewSize/2, height: 150)
+        let collectionViewSize = collectionView.frame.size.width - padding
+        return CGSize(width: collectionViewSize/2, height: 150)
     }
 }
 
@@ -150,16 +150,35 @@ extension SearchViewController: UITextFieldDelegate {
         return true
     }
 
-       func textFieldDidBeginEditing(_ textField: UITextField) {
-           guard let textField = searchField else { return }
-           textField.layer.borderWidth = 3
-           textField.layer.borderColor = UIColor.lightGray.cgColor
-       }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let textField = searchField else { return }
+        textField.layer.borderWidth = 3
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
 
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            guard let textField = searchField else { return }
-           textField.layer.borderWidth = 0
-           textField.layer.borderColor = UIColor.clear.cgColor
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let textField = searchField else { return }
+        textField.layer.borderWidth = 0
+        textField.layer.borderColor = UIColor.clear.cgColor
 
-       }
+    }
+}
+
+extension SearchViewController: PopupAlertDelegate {
+    func apiCallFailed(state: Bool) {
+        if state {
+            popupAlert(title: "Accident ⛔️", message: "Votre recherche n'a pas abouti, veuillez le nom entier ou vérifier l'orthographe.")
+        }
+    }
+
+    func popupAlert(title: String, message: String) {
+        guard let textField = self.searchField else { return }
+        textField.layer.borderWidth = 3
+        textField.layer.borderColor = UIColor.red.cgColor
+
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

@@ -31,4 +31,27 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     }
 
+    func setupUI(game: WishlistGame) {
+        guard let image = backgroundImage else { return }
+        guard let gameLabel = gameLabel else { return }
+        gameLabel.text = game.name
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 3
+        self.layer.borderColor = UIColor.darkGray.cgColor
+        image.contentMode = .scaleToFill
+    }
+
+    func setupUI(game: KuroGame) {
+        guard let image = backgroundImage else { return }
+        guard let gameLabel = gameLabel else { return }
+        gameLabel.text = game.name
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 3
+        self.layer.borderColor = UIColor.darkGray.cgColor
+        image.contentMode = .scaleToFill
+
+    }
+
 }
